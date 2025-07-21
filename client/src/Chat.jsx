@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000"); // Change to your server URL if needed
+const socket = io("https://my-chat-app-nvia.onrender.com/"); // This will automatically connect to the current domain
 
 function Chat() {
   const [messages, setMessages] = useState([]);

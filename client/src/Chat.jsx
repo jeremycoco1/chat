@@ -1,7 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("https://my-chat-app-nvia.onrender.com"); // Remove trailing slash and ensure no spaces
+// Determine the Socket.IO server URL based on the environment
+const socketURL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5000"
+    : window.location.origin;
+
+const socket = io(socketURL);
 
 function Chat() {
   const [messages, setMessages] = useState([]);

@@ -8,8 +8,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*", // à adapter en production
+    origin: ["https://my-chat-app-nvia.onrender.com", "http://localhost:5173"],
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
